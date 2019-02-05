@@ -1,0 +1,129 @@
+//Encapsulation
+
+public class Car {
+	/* Private variables are only accessible in the class in which they belong,
+	 * we use getter to access these variables from outside the class and setter to change the variables
+	 * from outside the class. This is one key component of encapsulation.  
+	 */
+	private double engine;
+	private int speed;
+	private int doorAmount;
+
+public Car(double e, int s, int d){
+this.engine = e;
+this.speed = s;
+this.doorAmount = d;
+	
+}
+
+public void findSpeed(int x) {
+	speed = x;	
+}
+public int getspeed() {
+	return speed;
+}
+public void findDoor(int y) {
+	doorAmount = y;
+}
+public int getdoorAmount() {
+	return doorAmount;
+}
+public void findEngine(double z) {
+	engine = z;
+}
+public double getengine() {
+	return engine;
+}
+}
+
+//Encapsulation
+public class main {
+
+	public static void main(String[] args) {
+		//Through encapsulation, these values are placed inside a private variable
+		Car ford = new Car(2.5,90,2);
+		Car mustang = new Car(3.5,80,2);
+		Car bmw = new Car(2.5,100,4);
+			
+		System.out.printf("This ford car's engine size is " +ford.getengine() + " and it is travelling at " + ford.getspeed() + 
+				" miles per hour and it has " +ford.getdoorAmount() + " doors.");
+		System.out.printf("\nThis mustang car's engine size is " +mustang.getengine() + " and it is travelling at " + mustang.getspeed() + 
+				" miles per hour and it has " +mustang.getdoorAmount() + " doors.");
+		System.out.printf("\nThis bmw car's engine size is " +bmw.getengine() + " and it is travelling at " + bmw.getspeed() + 
+				" miles per hour and it has " +bmw.getdoorAmount() + " doors.");
+		}
+
+}
+
+//Inheritance
+/* Key word extends, is used to inherit from another class,
+ * here jeep class is inheriting characteristics from car class.
+ * There the use of super, we are able to use car's constructor.
+ */
+public class Jeep extends Car {
+
+	public Jeep(double e, int s, int d) {
+		super(e, s, d);
+	}
+
+}
+
+//Inheritance
+public class main {
+
+	public static void main(String[] args) {
+		
+		Car ford = new Car(2.5,90,2);
+		Car mustang = new Car(3.5,80,2);
+		Car bmw = new Car(2.5,100,4);
+		
+		// Inheritance is being exercised - here we have Jeep class using the characteristics of car class. 
+		Jeep cherokee = new Jeep(3.0, 120, 4);
+			
+		System.out.printf("This ford car's engine size is " +ford.getengine() + " and it is travelling at " + ford.getspeed() + 
+				" miles per hour and it has " +ford.getdoorAmount() + " doors.");
+		System.out.printf("\nThis mustang car's engine size is " +mustang.getengine() + " and it is travelling at " + mustang.getspeed() + 
+				" miles per hour and it has " +mustang.getdoorAmount() + " doors.");
+		System.out.printf("\nThis bmw car's engine size is " +bmw.getengine() + " and it is travelling at " + bmw.getspeed() + 
+				" miles per hour and it has " +bmw.getdoorAmount() + " doors.");
+		
+		//Inherited
+		System.out.printf("\n\nThis cherokee jeep's engine size is " +cherokee.getengine() + " and it is travelling at " + cherokee.getspeed() + 
+			" miles per hour and it has " +cherokee.getdoorAmount() + " doors.");
+	}
+
+}
+
+//Polymorphism
+public class main {
+
+	public static void main(String[] args) {
+		
+		Car ford = new Car(2.5,90,2);
+		Car mustang = new Car(3.5,80,2);
+		Car bmw = new Car(2.5,100,4);
+		
+		Jeep cherokee = new Jeep(3.0, 120, 4);
+		
+		/* Here Polymorphism is being exercised; because jeep inherits from the car class, we can 
+		 * create a jeep object of type car. 
+		 */
+		Car cherokee2 = new Jeep(3.2, 125, 2);
+			
+		System.out.printf("This ford car's engine size is " +ford.getengine() + " and it is travelling at " + ford.getspeed() + 
+				" miles per hour and it has " +ford.getdoorAmount() + " doors.");
+		System.out.printf("\nThis mustang car's engine size is " +mustang.getengine() + " and it is travelling at " + mustang.getspeed() + 
+				" miles per hour and it has " +mustang.getdoorAmount() + " doors.");
+		System.out.printf("\nThis bmw car's engine size is " +bmw.getengine() + " and it is travelling at " + bmw.getspeed() + 
+				" miles per hour and it has " +bmw.getdoorAmount() + " doors.");
+		
+		System.out.printf("\n\nThis cherokee jeep's engine size is " +cherokee.getengine() + " and it is travelling at " + cherokee.getspeed() + 
+			" miles per hour and it has " +cherokee.getdoorAmount() + " doors.");
+		
+		//Polymorphism
+		System.out.printf("\n\nThis cherokee2 jeep's engine size is " +cherokee2.getengine() + " and it is travelling at " + cherokee2.getspeed() + 
+				" miles per hour and it has " +cherokee2.getdoorAmount() + " doors.");
+	}
+
+}
+

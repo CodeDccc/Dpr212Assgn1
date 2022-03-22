@@ -58,7 +58,7 @@ public class main {
 //Inheritance
 /* Key word extends, is used to inherit from another class,
  * here jeep class is inheriting characteristics from car class.
- * There the use of super, we are able to use car's constructor.
+ * Through the use of super, we are able to use car's constructor.
  */
 public class Jeep extends Car {
 
